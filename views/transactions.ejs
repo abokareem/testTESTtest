@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="m-4">Transactions</h2>
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>From</th>
+              <th>To</th>
+              <th>Transaction ID</th>
+              <th>Description</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <% transactions.forEach(item=>{ %>
+
+              <tr>
+                <% if(item.from) { %>
+
+                  <td><%= item.from.phone %></td>
+
+                <% }else{ %>
+                  <td></td>
+                <% } %>
+
+                <% if(item.to) { %>
+
+                  <% if(item.to.isMerchant){ %>
+                    <td><%= item.to.username %></td>
+                  <% }else{ %>
+                    <td><%= item.to.phone %></td>
+                 <% } %>
+
+                <% }else{ %>
+                  <td></td>
+               <% } %>
+
+                <td><%= item.id %></td>
+                <td><%= item.desc %></td>
+                <td><%= item.value %></td>
+                
+                <% if(item.complete){ %>
+
+                  <td class="success-text">Yes</td>
+
+                <% }else{ %>
+                    <td class="error-text">No</td>
+                <% } %>
+
+                <td><%= item.createdAt %></td>
+              </tr>
+
+            <% }) %>
+            
+          </tbody>
+        </table>
+      </div>
+    
+</body>
+</html>

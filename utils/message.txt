@@ -1,0 +1,72 @@
+`لقد تم أنشاء محفظتك بنجاح!
+                    المفتاح الخاص بك : ${resp.wallet.privateKey}
+                   رجاء احرص على ندوينة و حفظة في مكان أمن
+                   pin : ${userMsg[1]}
+`
+
+
+
+'كلمة السر يجب ان تتكون من 4 ارقام فقط. مثال 1234'
+
+'الحد الادني لتوليد لتوليد قسيمة هو 5 شيكل'
+
+
+`تم توليد قسيمة بنجاح, رقم القسيمة هو:  
+            ${evoucher.token} 
+            قيمة القسيمة: ${evoucher.value} شيكل
+
+            الرصيد الحالي: ${wallet.balance.toFixed(2)} شيكل
+            ID المعاملة: ${transaction.id}`
+
+
+'رقم القسيمة خاطئ خاطئ الرجاء التاكد منه و المحاولة مرة أخرى'
+
+
+'لقد تم أستعمال القسيمة مسبقاً'
+
+
+`تم الأيداع بنجاح,
+              المبلغ الذي تم ايداعه: ${evoucher.value} شيكل
+
+              رصيدك الحالي: ${wallet.balance.toFixed(2)}
+              رقم المعاملة: ${transaction.id}
+              `
+
+
+"رقم المستلم غير مسجل لدينا الرجاء التاكد منه و المحاولة مرة اخرى"
+
+`
+                عذرا رصيدك غير كافي,
+                الرصيد الحالي: ${wallet.balance.toFixed(2)} شيكل
+                `
+
+                `معاملة:
+                تحويل مبلغ: ${amount}
+                المستلم: ${recvPhone}
+                رمز التاكيد: ${otp}`
+
+                `
+                تم تسجيل حساب التاجر بنجاح
+                الأسم: ${newWallet.username}
+                المفتاح الخاص: ${newWallet.privateKey}
+                كلمة السر: ${pin}
+                رقم التاجر: ${newWallet.merchantKey}
+                `
+
+                `تم أستلام مبلغ: ${amount}
+                من: ${wallet.phone}
+                الرصيد الحالي: ${merchantWallet.balance}
+                الرصيد السابق: ${parseFloat(merchantWallet.balance) - parseFloat(amount)}
+                `
+
+                `تم دفغ المبلغ الى ${merchantWallet.username} بنجاح
+                المبلغ : ${amount}
+                رصيدك الحالي: ${wallet.balance}`
+
+                `تم التحويل بنجاح,
+                المستلم: ${recvWallet.phone}
+                المبلغ: ${amount}
+
+                الرصيد الحالي: ${wallet.balance.toFixed(2)} شيكل
+                رقم المعاملة : ${transaction.id}
+                `
